@@ -8,6 +8,7 @@ jobs:
       - run: echo "hello world"
       - run: npm install
       - run: npm run build
+      - run: npx grunt build
   build2:
     docker: 
       - image: cimg/php:8.0.3 # the primary container, where your job's commands are run
