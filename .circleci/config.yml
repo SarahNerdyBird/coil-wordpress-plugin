@@ -1,21 +1,20 @@
 version: 2.0
 jobs:
-  build1:
+  node_build:
     docker: 
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: echo "hello world"
       - run: npm install
       - run: npm run build
       - run: npx grunt build
-  build2:
+  php_dependecies:
     docker: 
       - image: cimg/php:8.0.3 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: echo "hello world"
       - run: composer install
+      - run: composer phpcs
 workflows:
   version: 2
   one_and_two:
