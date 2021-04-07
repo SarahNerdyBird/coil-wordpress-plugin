@@ -1,6 +1,6 @@
 version: 2.0
 jobs:
-  build:
+  build1:
     docker: 
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
     steps:
@@ -8,3 +8,10 @@ jobs:
       - run: echo "hello world"
       - run: npm install
       - run: npm run build
+  build2:
+    docker: 
+      - image: cimg/php:8.0.3 # the primary container, where your job's commands are run
+    steps:
+      - checkout # check out the code in the project directory
+      - run: echo "hello world"
+      - run: composer install
