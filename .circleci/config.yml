@@ -15,3 +15,9 @@ jobs:
       - checkout # check out the code in the project directory
       - run: echo "hello world"
       - run: composer install
+workflows:
+  version: 2
+  one_and_two:
+    jobs:
+      - build1
+      - build2
