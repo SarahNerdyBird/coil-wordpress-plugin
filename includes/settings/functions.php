@@ -555,7 +555,7 @@ function admin_no_payment_pointer_notice() {
 		</div>
 	</div>
 	<?php
-}
+} 
 
 /**
  * Render the Coil submenu setting screen to display options to gate posts
